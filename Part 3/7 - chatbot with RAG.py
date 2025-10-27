@@ -4,7 +4,8 @@ from langchain.chat_models import init_chat_model
 from langchain_core.messages import BaseMessage, HumanMessage, AIMessage, SystemMessage
 from langgraph.prebuilt import ToolNode, tools_condition
 from langchain_community.tools import DuckDuckGoSearchResults
-from typing import TypedDict, Annotated, Sequence, Literal
+from langchain.agents import AgentState
+from typing import Annotated, Sequence, Literal
 from dotenv import load_dotenv
 from pydantic import BaseModel, Field
 from langchain_core.vectorstores import InMemoryVectorStore
@@ -30,7 +31,7 @@ all_splits = text_splitter.split_documents(docs)
 _ = vector_store.add_documents(documents=all_splits)
 
 
-class State(TypedDict):
+class State(AgentState):
     messages: Annotated[Sequence[BaseMessage], add_messages]
     iteration: int
 

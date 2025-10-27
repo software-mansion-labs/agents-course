@@ -1,8 +1,8 @@
 from langgraph.graph import StateGraph, START, END
-from typing import TypedDict
+from langchain.agents import AgentState
 
 
-class State(TypedDict):
+class State(AgentState):
     a: int
     b: int
 
