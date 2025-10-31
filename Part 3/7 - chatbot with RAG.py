@@ -54,9 +54,7 @@ def ask_llm(state: State) -> State:
 
     retrieved_docs = vector_store.similarity_search(user_query)
     context = "\n\n".join([doc.page_content for doc in retrieved_docs])
-    user_message = HumanMessage(
-        content=f"Context:\n{context}\n\nUser question:\n{user_query}"
-    )
+    user_message = HumanMessage(f"Context:\n{context}\n\nUser question:\n{user_query}")
 
     # homework: try to add an intermediate step, where a prompt is created by the LLM based on the query and context, before passing it to the LLM below.
 
@@ -88,7 +86,7 @@ def sum_up_search(state: State) -> State:
 def end_condition(state: State) -> Literal["yes", "no"]:
     decision: Decision = model_decision.invoke(
         state["messages"]
-        + [SystemMessage(content="Did the user specify to end the conversation?")]
+        + [SystemMessage("Did the user specify to end the conversation?")]
     )
     return decision.decision
 

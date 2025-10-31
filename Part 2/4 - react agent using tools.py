@@ -34,7 +34,7 @@ while True:
     query = input("query: ")
 
     new_state = agent.invoke(
-        {"messages": [HumanMessage(content=query)]},
+        {"messages": [HumanMessage(query)]},
         config,
     )
     answer = new_state["messages"][-1].content

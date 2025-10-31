@@ -19,7 +19,7 @@ model = init_chat_model("openai:gpt-4o")
 
 def ask_llm(state: State) -> State:
     user_query = input("query: ")
-    user_message = HumanMessage(content=user_query)
+    user_message = HumanMessage(user_query)
     answer_message: AIMessage = model.invoke(state["messages"] + [user_message])
     print("answer: ", answer_message.content)
 

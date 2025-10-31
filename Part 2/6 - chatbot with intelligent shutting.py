@@ -30,7 +30,7 @@ model_decision = model.with_structured_output(Decision)
 
 def ask_llm(state: State) -> State:
     user_query = input("query: ")
-    user_message = HumanMessage(content=user_query)
+    user_message = HumanMessage(user_query)
     answer_message: AIMessage = model_with_search.invoke(
         state["messages"] + [user_message]
     )
@@ -60,7 +60,7 @@ def end_condition(state: State) -> Literal["yes", "no"]:
     # homework: not the entire message history is needed to make this decision, try trimming it to only use the necessary messages
     decision: Decision = model_decision.invoke(
         state["messages"]
-        + [SystemMessage(content="Did the user specify to end the conversation?")]
+        + [SystemMessage("Did the user specify to end the conversation?")]
     )
     return decision.decision
 

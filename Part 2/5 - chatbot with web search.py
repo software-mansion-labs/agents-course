@@ -22,7 +22,7 @@ model_with_search = model.bind_tools([DuckDuckGoSearchResults()])
 
 def ask_llm(state: State) -> State:
     user_query = input("query: ")
-    user_message = HumanMessage(content=user_query)
+    user_message = HumanMessage(user_query)
     answer_message: AIMessage = model_with_search.invoke(
         state["messages"] + [user_message]
     )
