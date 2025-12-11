@@ -8,11 +8,11 @@
 
 ### :one: [Basic Chatbot](https://blog.swmansion.com/building-ai-agents-with-langgraph-part-1-4-a-basic-chatbot-ac4d2ad10bed)
 
-### :two: Tools — out Dec. 11
+### :two: Tools — to be published soon
 
-### :three: RAG and Long-Term Memory — out Dec. 16
+### :three: RAG and Long-Term Memory — to be published soon
 
-### :four: Real-Life Example — out Dec. 22
+### :four: Real-Life Example — to be published soon
 
 ## The Series is created by Software Mansion
 
