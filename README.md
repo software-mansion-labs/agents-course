@@ -8,7 +8,7 @@
 
 ### :one: [Basic Chatbot](https://blog.swmansion.com/building-ai-agents-with-langgraph-part-1-4-a-basic-chatbot-ac4d2ad10bed)
 
-### :two: Tools — to be published soon
+### :two: [Tools](https://medium.com/p/a7955432c220)
 
 ### :three: RAG and Long-Term Memory — to be published soon
 
